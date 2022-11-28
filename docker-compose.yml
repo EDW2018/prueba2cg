@@ -1,4 +1,12 @@
 services:
+  test:
+    image: 'vvadp/test:latest'
+    container_name: test
+    build:
+      context: activiedad5cg
+      dockerfile: Dockerfile
+    ports:
+      - "90:90"
   spring:
     image: 'edwin17/spring:latest'
     container_name: spring

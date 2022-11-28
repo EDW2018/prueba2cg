@@ -19,6 +19,13 @@ jobs:
         username: ${{secrets.DOCKERHUB_USERNAME}}
         password: ${{secrets.DOCKERHUB_TOKEN}}
     -    
+     name: test
+     uses: docker/build-push-action@v3
+     with:
+       push: true
+       tags: ${{secrets.DOCKERHUB_USERNAME}}/test:latest
+       context: test        
+    -    
      name: Build y push Docker image spring
      uses: docker/build-push-action@v3
      with:

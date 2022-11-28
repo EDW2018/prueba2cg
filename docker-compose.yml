@@ -1,9 +1,9 @@
 services:
   test:
-    image: 'vvadp/test:latest'
+    image: 'edwin17/test:latest'
     container_name: test
     build:
-      context: activiedad5cg
+      context: test
       dockerfile: Dockerfile
     ports:
       - "90:90"

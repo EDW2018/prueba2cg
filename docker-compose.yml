@@ -1,0 +1,18 @@
+services:
+  spring:
+    image: 'edwin17/spring:latest'
+    container_name: spring
+    expose:
+      - "8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://prueba1cg.postgres.database.azure.com:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=postgres@prueba1cg
+      - SPRING_DATASOURCE_PASSWORD=Prueba01CG@
+  angular:
+    image: 'edwin17/angular:latest'
+    container_name: angular-service
+    ports:
+      - "80:80"
+    depends_on:
+      - spring	
